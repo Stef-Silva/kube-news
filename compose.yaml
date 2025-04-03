@@ -10,4 +10,7 @@ services:
       POSTGRES_USER: kubenews
       POSTGRES_DB: kubenews
     volumes:
-      - ./postgre_vol:/var/lib/postgresql/data
+      - postgre_docker_vol:/var/lib/postgresql/data
+
+volumes:
+  postgre_docker_vol:
