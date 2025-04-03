@@ -9,3 +9,5 @@ services:
       POSTGRES_PASSWORD: Pg123
       POSTGRES_USER: kubenews
       POSTGRES_DB: kubenews
+    volumes:
+      - /home/stehs/Development/kube-news/postgre_vol:/var/lib/postgresql/data
