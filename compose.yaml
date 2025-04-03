@@ -14,3 +14,5 @@ services:
 
 volumes:
   postgre_docker_vol:
+    name: my_ext_postgre_vol
+    external: true
