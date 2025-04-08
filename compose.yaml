@@ -35,4 +35,5 @@ volumes:
 
 networks:
   kube_news_net:
+    name: knews_net
     driver: bridge
