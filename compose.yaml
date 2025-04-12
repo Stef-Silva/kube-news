@@ -28,6 +28,11 @@ services:
     depends_on:
       - postgre
 
+  nginx:
+    image: nginx
+    depends_on:
+      - kube_news
+
 volumes:
   postgre_docker_vol:
     name: my_ext_postgre_vol
