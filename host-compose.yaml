@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx
+    network_mode: "host" # Utiliza a rede Host no container
+  curl:
+    image: nginx
+    extra_hosts:
+      aula_docker.stehsilva.com: "172.xx.xxx.xxx" # Adiciona o domínio direto no arquivo host do container
