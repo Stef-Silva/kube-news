@@ -13,11 +13,12 @@ services:
       - postgre_docker_vol:/var/lib/postgresql/data
     networks:
       - kube_news_net
-    depends_on:
-      - nginx
 
   kube_news:
-    image: kubedevio/kube-news:v1
+    image: kubedevio/kube-news
+    build:
+      context: ./src
+      dockerfile: Dockerfile
     ports:
       - 8080:8080
     networks:
@@ -30,11 +31,6 @@ services:
     depends_on:
       - postgre
 
-  nginx:
-    image: nginx
-    depends_on:
-      - kube_news
-
 volumes:
   postgre_docker_vol:
     name: my_ext_postgre_vol
@@ -42,6 +38,4 @@ volumes:
 
 networks:
   kube_news_net:
-    name: knew_net
-    external: true
     driver: bridge
