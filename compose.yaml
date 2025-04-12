@@ -13,6 +13,8 @@ services:
       - postgre_docker_vol:/var/lib/postgresql/data
     networks:
       - kube_news_net
+    depends_on:
+      - nginx
 
   kube_news:
     image: kubedevio/kube-news:v1
